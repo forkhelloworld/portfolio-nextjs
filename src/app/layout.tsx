@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import AnimatedBackground from "@/components/Background";
+import Footer from "@/components/Footer";
 
-const poppins = Poppins({weight:'800', subsets:['latin']})
+const poppins = Poppins({weight:'800',subsets:['latin']})
 
 export const metadata: Metadata = {
-  title: "Serhii Sliusarskyi - Portfolio",
-  description: "Portfolio Website",
+  title: "Serhii Sliusarsky - Portfolio",
+  description: "Portfolio",
 };
 
 export default function RootLayout({
@@ -17,9 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${poppins.className}`}
       >
+        <Header/>
+        <AnimatedBackground/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
